@@ -85,7 +85,7 @@ RedisProvider.prototype.purge = function() {
     throw new Error("Purge command is not supprot for redis yet");
 };
 
-RedisProvider.prototype.exipre = function(key, time, cb) {
+RedisProvider.prototype.expire = function(key, time, cb) {
     if(!_.isFunction(cb))
         cb = _.noop;
     this.client.expire(key, time, function(e) {
@@ -93,8 +93,8 @@ RedisProvider.prototype.exipre = function(key, time, cb) {
     });
 };
 
-RedisProvider.prototype.exipreSync = function(key, time) {
-    this.makeSync(this.exipre).call(this, key, time);
+RedisProvider.prototype.expireSync = function(key, time) {
+    this.makeSync(this.expire).call(this, key, time);
 };
 
 RedisProvider.prototype.setHValue = function(hash, key, value, cb) {
