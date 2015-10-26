@@ -1,6 +1,6 @@
 {
   "name": "session-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node.JS small session storage",
   "main": "index.js",
   "author": {
